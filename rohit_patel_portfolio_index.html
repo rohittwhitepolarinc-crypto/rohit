@@ -1,0 +1,141 @@
+<!--
+  Rohit Patel - Personal Portfolio (Single-file HTML)
+  - Dark theme, mobile friendly
+  - Save this file as index.html and upload to a GitHub repository named: rohitpatel.github.io
+  - After pushing to GitHub, Pages will publish at: https://rohitpatel.github.io
+  - To add a real photo: replace the `profile.jpg` src with your image file in the same folder.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rohit Patel — Portfolio</title>
+  <meta name="description" content="Rohit Patel — Python & Django developer. Farma Helper project. Contact: patelrohit70351@gmail.com" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <style>
+    /* ===== Reset & base ===== */
+    :root{
+      --bg:#0b0b0d; --card:#0f1113; --muted:#9aa0a6; --accent:#7c5cff; --glass: rgba(255,255,255,0.03);
+      --radius:14px; --fw-medium:600;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,#060607 0%, #0b0b0d 100%); color:#e6eef8; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+    a{color:inherit;text-decoration:none}
+
+    /* ===== Layout ===== */
+    .wrap{max-width:920px;margin:28px auto;padding:28px;}
+    .card{background:linear-gradient(180deg,var(--card),rgba(10,11,13,0.85));padding:22px;border-radius:var(--radius);box-shadow:0 6px 30px rgba(2,4,8,0.7);}
+    .grid{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center}
+
+    /* ===== Profile ===== */
+    .avatar{width:120px;height:120px;border-radius:20px;overflow:hidden;flex-shrink:0;background:linear-gradient(180deg,#111,#000);display:flex;align-items:center;justify-content:center}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    h1{font-size:20px;margin-bottom:6px}
+    .handle{color:var(--muted);font-size:13px;margin-bottom:10px}
+    .bio{color:var(--muted);line-height:1.5;font-size:14px}
+
+    /* ===== Skills ===== */
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .chip{background:var(--glass);padding:8px 12px;border-radius:999px;font-size:13px;color:var(--muted);border:1px solid rgba(255,255,255,0.03)}
+
+    /* ===== Project card ===== */
+    .project{margin-top:18px;padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(124,92,255,0.08), transparent);border:1px solid rgba(124,92,255,0.12)}
+    .project h3{font-size:15px;margin-bottom:6px}
+    .project p{color:var(--muted);font-size:14px}
+
+    /* ===== Contact & socials ===== */
+    .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .btn{padding:10px 14px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.06);cursor:pointer;font-weight:600}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#5fc7ff);color:#0a0b0c;border:0}
+
+    .socials{display:flex;gap:10px;margin-top:10px}
+    .socials a{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.01);font-size:13px;color:var(--muted)}
+
+    /* ===== Footer ===== */
+    footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* ===== Responsive ===== */
+    @media (max-width:640px){.grid{grid-template-columns:1fr;row-gap:16px}.avatar{width:96px;height:96px;border-radius:12px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="grid">
+        <div class="avatar" aria-hidden="true">
+          <!-- Replace 'profile.jpg' with your real photo file in same folder -->
+          <img src="profile.jpg" alt="Rohit Patel" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'240\' height=\'240\'><rect width=\'100%\' height=\'100%\' fill=\'%230f1113\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23ffffff%27 font-size=\'20\' font-family=\'Arial\'>Rohit Patel</text></svg>'"/>
+        </div>
+
+        <div>
+          <h1>Rohit Patel</h1>
+          <div class="handle">Python & Django developer • Ahmedabad</div>
+          <div class="bio">I’m a passionate Python and Django developer focused on building clean, functional, and modern web applications. Experienced in Python, frontend basics, and database-backed projects.</div>
+
+          <div class="skills" aria-label="Skills">
+            <span class="chip">Python</span>
+            <span class="chip">Django</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">MySQL</span>
+          </div>
+
+          <div class="project" aria-labelledby="proj1">
+            <h3 id="proj1">Farma Helper</h3>
+            <p>Farma Helper is a Python + MySQL based application that assists with farm data management and basic automation tasks. (One project completed — available on request.)</p>
+            <div class="row" style="margin-top:10px">
+              <button class="btn btn-primary" id="contactBtn">Contact Me</button>
+              <button class="btn" id="copyEmail">Copy Email</button>
+              <a class="btn" href="mailto:patelrohit70351@gmail.com">Email</a>
+              <a class="btn" href="tel:+917357359525">Call</a>
+            </div>
+          </div>
+
+          <div class="socials">
+            <a href="https://linkedin.com/in/rohit-patel-050868265" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/rohitpatel" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://instagram.com/rohitpatel" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div>Made with ❤️ • Rohit Patel</div>
+      </footer>
+    </section>
+
+    <section style="margin-top:18px;text-align:center;color:var(--muted);font-size:13px">
+      <div class="card" style="padding:12px">
+        <strong>How to publish (GitHub Pages):</strong>
+        <ol style="text-align:left;margin-top:8px;color:var(--muted);line-height:1.6">
+          <li>Create a new public repository named <code>rohitpatel.github.io</code>.</li>
+          <li>Upload this file and any assets (profile.jpg). Rename this file to <code>index.html</code>.</li>
+          <li>Commit & push. GitHub Pages will publish at <code>https://rohitpatel.github.io</code> within a few minutes.</li>
+          <li>If you want me to push it to GitHub for you, share repo access or let me guide step-by-step.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Basic interactivity
+    document.getElementById('copyEmail').addEventListener('click', async function(){
+      try{
+        await navigator.clipboard.writeText('patelrohit70351@gmail.com');
+        this.textContent = 'Copied!';
+        setTimeout(()=> this.textContent = 'Copy Email', 2000);
+      }catch(e){
+        alert('Copy failed — please copy manually: patelrohit70351@gmail.com');
+      }
+    });
+
+    document.getElementById('contactBtn').addEventListener('click', function(){
+      window.location.href = 'mailto:patelrohit70351@gmail.com';
+    });
+  </script>
+</body>
+</html>
